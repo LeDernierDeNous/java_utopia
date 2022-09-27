@@ -10,16 +10,18 @@ public class Town {
 
     private String name;
     private Player owner;
+    private Region parentRegion;
     
     HashMap<Ressources,Integer> ressources = new HashMap<Ressources,Integer>();
     ArrayList<Units> units = new ArrayList<Units>();
 
-    public Town(Player owner,String name){
+    public Town(Region parentRegion,Player owner,String name){
         for (Ressources res : Ressources.values()) {
             ressources.put(res, 0);
         }
         setOwner(owner);
         setName(name);
+        this.parentRegion = parentRegion;
     }
 
     public void setOwner(Player owner) {
@@ -36,6 +38,10 @@ public class Town {
 
     public Player getOwner() {
         return owner;
+    }
+
+    public Region getParentRegion() {
+        return parentRegion;
     }
 
     /**

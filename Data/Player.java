@@ -10,16 +10,16 @@ public class Player {
     private int silver;
     private int gold;
 
-    public Player(String name){
+    public Player(String name,Region parentRegion){
         this.name = name;
-        townList.add(new Town(this, name));
+        townList.add(new Town(parentRegion,this, name));
         this.gold = 0;
         this.silver = 0;
     }
 
-    public Player(String name, int silver, int gold){
+    public Player(Region parentRegion, String name, int silver, int gold){
         this.name = name;
-        townList.add(new Town(this, name));
+        townList.add(new Town(parentRegion, this, name));
         this.gold = gold;
         this.silver = silver;
     }
