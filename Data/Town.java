@@ -3,6 +3,7 @@ package Data;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import Data.Ressources.AdvancedRessources;
 import Data.Ressources.Ressources;
 import Data.Units.Units;
 
@@ -13,6 +14,7 @@ public class Town {
     private Region parentRegion;
     
     HashMap<Ressources,Integer> ressources = new HashMap<Ressources,Integer>();
+    HashMap<AdvancedRessources,Integer> avancedRessources = new HashMap<AdvancedRessources,Integer>();
     ArrayList<Units> units = new ArrayList<Units>();
 
     public Town(Region parentRegion,Player owner,String name){
